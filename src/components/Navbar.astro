@@ -32,7 +32,7 @@ import HamburgerMenuIcon from './icons/HamburgerMenu.astro';
     </div>
 
     <div class="flex items-center gap-4 text-gray-600">
-      <div class="user-link">
+      <div class="max-md:hidden user-link">
         <MapIcon />
         <p>Barranquilla</p>
       </div>
@@ -60,7 +60,9 @@ import HamburgerMenuIcon from './icons/HamburgerMenu.astro';
   </div>
 
   <div class="md:hidden w-full flex items-center gap-4">
-    <HamburgerMenuIcon />
+    <button>
+      <HamburgerMenuIcon />
+    </button>
 
     <div class="rounded-lg flex py-3 px-4 bg-gray-100 justify-between flex-1">
       <input
@@ -69,7 +71,31 @@ import HamburgerMenuIcon from './icons/HamburgerMenu.astro';
         placeholder="Buscar por productos, marcas y más..."
       />
 
-      <SearchIcon />
+      <button><SearchIcon /></button>
     </div>
   </div>
 </header>
+
+<div
+  class="md:hidden w-full flex gap-1 bg-[#ECF4FC] px-6 py-2 text-primary items-center text-sm"
+>
+  <MapIcon class="stroke-primary" />
+  <p>Barranquilla</p>
+  <ArrowDownIcon class="stroke-primary" />
+</div>
+
+<div class="md:hidden w-full px-6 py-2 bg-primary text-white shadow-lg">
+  <p class="mb-3">
+    Te mostramos los productos que se envían a <b>Barranquilla</b>. Selecciona
+    tu ubicación para mostrarte los productos disponibles en tu ciudad.
+  </p>
+
+  <div class="flex justify-end gap-2 text-sm mb-1">
+    <button class="rounded-full border border-gray-50 text-gray-50 px-4 py-2">
+      Continuar
+    </button>
+    <button class="rounded-full bg-gray-50 text-primary px-4 py-2">
+      Continuar
+    </button>
+  </div>
+</div>

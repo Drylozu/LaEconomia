@@ -12,10 +12,14 @@ import { Image } from 'astro:assets';
 ---
 
 <footer
-  class="w-full bg-gray-50 py-10 px-20 flex flex-col gap-12 text-gray-600"
+  class="w-full bg-gray-50 py-10 px-6 lg:px-20 flex flex-col gap-12 text-gray-600"
 >
-  <div class="w-full max-w-desktop flex justify-between">
-    <div class="flex gap-8">
+  <div
+    class="w-full max-w-desktop flex max-xl:flex-col gap-y-10 justify-between"
+  >
+    <div
+      class="grid lg:grid-flow-col lg:grid-rows-1 gap-8 max-lg:grid-cols-2 max-lg:grid-rows-2 max-md:items-center"
+    >
       <div class="w-44">
         <p class="text-xl font-bold mb-2">La empresa</p>
         <ul class="text-sm flex flex-col gap-2 cursor-pointer">
@@ -48,23 +52,31 @@ import { Image } from 'astro:assets';
         <ul class="text-sm flex flex-col gap-2 cursor-pointer">
           <li>315 782 3477</li>
           <li>Radicar PQRS</li>
-          <li class="text-xs">servicioalcliente@droguerialaeconomia.com</li>
+          <li class="text-xs text-wrap overflow-hidden wrap-anywhere">
+            servicioalcliente@droguerialaeconomia.com
+          </li>
         </ul>
       </div>
     </div>
 
     <div>
-      <p class="text-xl font-bold mb-2">¡Descarga gratis la App!</p>
+      <p class="max-md:hidden text-xl font-bold mb-2">
+        ¡Descarga gratis la App!
+      </p>
       <div
-        class="rounded-2xl border-2 border-gray-300 bg-white py-4 px-8 gap-6 flex items-center shadow-lg"
+        class="rounded-2xl border-2 border-gray-300 bg-white py-4 px-8 gap-6 flex w-full md:w-fit max-md:justify-evenly items-center shadow-lg"
       >
-        <Image src={qrApp} alt="QR App" />
-        <div class="h-14 w-0.5 bg-gray-300"></div>
+        <Image src={qrApp} alt="QR App" class="max-md:hidden" />
+        <div class="max-md:hidden h-14 w-0.5 bg-gray-300"></div>
         <Image
           src={logoApp}
           alt="App La Economía"
           class="rounded-2xl border-gray-300 border"
         />
+        <div class="md:hidden h-14 w-0.5 bg-gray-300"></div>
+        <p class="md:hidden font-bold text-lg">
+          Descarga gratis La Economía App
+        </p>
       </div>
 
       <div class="mt-8">
@@ -79,16 +91,17 @@ import { Image } from 'astro:assets';
     </div>
   </div>
 
-  <div class="w-full flex justify-between">
-    <p>
-      &copy;2023 Droguería La Economía. Todos los derechos reservados. v5.0 - <span
-        class="underline font-medium">Política de privacidad</span
-      >
+  <div
+    class="w-full flex max-lg:flex-col max-lg:text-center max-lg:items-center justify-between gap-y-6"
+  >
+    <p class="lg:flex-[0.8]">
+      &copy;2023 Droguería La Economía. Todos los derechos reservados. v5.0 -
+      <span class="underline font-medium">Política de privacidad</span>
     </p>
 
     <div class="flex gap-2">
       <p>Powered by:</p>
-      <Image src={mooba} alt="Mooba" />
+      <Image src={mooba} alt="Mooba" class="object-contain" />
     </div>
   </div>
 </footer>

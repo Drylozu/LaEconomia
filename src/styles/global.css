@@ -7,7 +7,7 @@
     --color-error: #BB251A;
 }
 
-@layer utilities {
+@layer base {
     .max-w-desktop {
         max-width: 1440px;
     }

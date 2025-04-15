@@ -37,15 +37,17 @@ const categories = [
 ];
 ---
 
-<section class="w-full max-w-desktop mx-auto flex items-center justify-around mt-4">
+<section
+  class="max-lg:overflow-x-auto w-full max-w-desktop lg:mx-auto flex justify-around lg:mt-4 snap-x snap-proximity"
+>
   {
     categories.map((category) => (
       <div
-        class="flex flex-col items-center gap-2 cursor-pointer"
+        class="flex flex-col items-center gap-2 cursor-pointer snap-start px-4 text-center text-sm"
         class:list={[category.disabled && 'saturate-0']}
       >
         <div
-          class="size-[100px] border-4 rounded-full relative"
+          class="size-[80px] lg:size-[100px] border-4 rounded-full relative"
           class:list={[
             category.disabled ? 'border-gray-200' : 'border-[#9EC8F1]',
           ]}

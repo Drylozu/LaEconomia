@@ -3,10 +3,14 @@ import ArrowLeftIcon from '../components/icons/ArrowLeft.astro';
 import ArrowRightIcon from '../components/icons/ArrowRight.astro';
 import banner from '../assets/banner-main.jpg';
 
+import mobileBanner1 from '../assets/mobile-banner-1.png';
+import mobileBanner2 from '../assets/mobile-banner-2.png';
+import mobileBanner3 from '../assets/mobile-banner-3.png';
+
 import { Image } from 'astro:assets';
 ---
 
-<main class="w-full relative">
+<main class="max-md:hidden w-full relative">
   <Image
     src={banner}
     alt="Día de La Economía"
@@ -36,4 +40,24 @@ import { Image } from 'astro:assets';
       <div class="bg-black/20 rounded-full h-1 w-2"></div>
     </div>
   </div>
+</main>
+
+<main
+  class="md:hidden w-full mt-2 flex overflow-x-auto px-4 py-2 gap-4 snap-x snap-mandatory pb-10"
+>
+  <Image
+    src={mobileBanner1}
+    alt="Día de La Economía"
+    class="w-[95%] h-auto rounded-lg shadow-xl snap-center"
+  />
+  <Image
+    src={mobileBanner2}
+    alt="Día de La Economía"
+    class="w-[95%] h-auto rounded-lg shadow-xl snap-center"
+  />
+  <Image
+    src={mobileBanner3}
+    alt="Día de La Economía"
+    class="w-[95%] h-auto rounded-lg shadow-xl snap-center"
+  />
 </main>
