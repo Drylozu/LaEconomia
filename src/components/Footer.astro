@@ -1,0 +1,94 @@
+---
+import qrApp from '../assets/qr-app.png';
+import logoApp from '../assets/logo-app.png';
+import mooba from '../assets/mooba.png';
+
+import YouTubeIcon from '../components/icons/YouTube.astro';
+import InstagramIcon from '../components/icons/Instagram.astro';
+import FacebookIcon from '../components/icons/Facebook.astro';
+import WhatsAppIcon from '../components/icons/WhatsApp.astro';
+
+import { Image } from 'astro:assets';
+---
+
+<footer
+  class="w-full bg-gray-50 py-10 px-20 flex flex-col gap-12 text-gray-600"
+>
+  <div class="w-full max-w-desktop flex justify-between">
+    <div class="flex gap-8">
+      <div class="w-44">
+        <p class="text-xl font-bold mb-2">La empresa</p>
+        <ul class="text-sm flex flex-col gap-2 cursor-pointer">
+          <li>Quiénes Somos</li>
+          <li>Misión, Visión e Historia</li>
+          <li>Ética</li>
+          <li>Nuestras Sucursales</li>
+        </ul>
+      </div>
+
+      <div class="w-44">
+        <p class="text-xl font-bold mb-2">Información</p>
+        <ul class="text-sm flex flex-col gap-2 cursor-pointer">
+          <li>Aviso de Privacidad</li>
+          <li>Habeas Data</li>
+          <li>Términos y Condiciones de promociones</li>
+        </ul>
+      </div>
+
+      <div class="w-44">
+        <p class="text-xl font-bold mb-2">Club Vida Sana</p>
+        <ul class="text-sm flex flex-col gap-2 cursor-pointer">
+          <li>Beneficios del Club</li>
+          <li>Actualiza tus datos</li>
+        </ul>
+      </div>
+
+      <div class="w-44">
+        <p class="text-xl font-bold mb-2">Contacto</p>
+        <ul class="text-sm flex flex-col gap-2 cursor-pointer">
+          <li>315 782 3477</li>
+          <li>Radicar PQRS</li>
+          <li class="text-xs">servicioalcliente@droguerialaeconomia.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xl font-bold mb-2">¡Descarga gratis la App!</p>
+      <div
+        class="rounded-2xl border-2 border-gray-300 bg-white py-4 px-8 gap-6 flex items-center shadow-lg"
+      >
+        <Image src={qrApp} alt="QR App" />
+        <div class="h-14 w-0.5 bg-gray-300"></div>
+        <Image
+          src={logoApp}
+          alt="App La Economía"
+          class="rounded-2xl border-gray-300 border"
+        />
+      </div>
+
+      <div class="mt-8">
+        <p class="text-xl font-bold mb-2">Síguenos en:</p>
+        <div class="flex items-center gap-4 cursor-pointer">
+          <YouTubeIcon />
+          <InstagramIcon />
+          <FacebookIcon />
+          <WhatsAppIcon />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full flex justify-between">
+    <p>
+      &copy;2023 Droguería La Economía. Todos los derechos reservados. v5.0 - <span
+        class="underline font-medium">Política de privacidad</span
+      >
+    </p>
+
+    <div class="flex gap-2">
+      <p>Powered by:</p>
+      <Image src={mooba} alt="Mooba" />
+    </div>
+  </div>
+</footer>

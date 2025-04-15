@@ -2,6 +2,7 @@
 
 @theme {
     --color-primary: #1C58B7;
+    --color-primary-dark: #143F85;
     --color-background: #FCFCFC;
     --color-error: #BB251A;
 }
@@ -9,6 +10,14 @@
 @layer utilities {
     .max-w-desktop {
         max-width: 1440px;
+    }
+
+    .user-link {
+        @apply flex items-center gap-1;
+    }
+
+    .user-link > *:not(:first-child) {
+        @apply max-lg:hidden;
     }
 }
 

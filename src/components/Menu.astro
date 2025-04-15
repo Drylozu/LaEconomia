@@ -1,0 +1,23 @@
+---
+import ArrowDownIcon from '../components/icons/ArrowDown.astro';
+---
+
+<nav class="max-md:hidden w-full bg-primary py-2 max-lg:px-4 lg:pl-12 text-sm">
+  <div class="w-full max-w-desktop flex items-center gap-8 mx-auto">
+    {
+      [
+        'Medicamentos',
+        'Botiquín',
+        'Salud y belleza',
+        'Cuidado del bebé',
+        'Alimentos y bebidas',
+        'Varios',
+      ].map((category) => (
+        <div class="flex items-center gap-2 text-white">
+          <p>{category}</p>
+          <ArrowDownIcon class="stroke-white" />
+        </div>
+      ))
+    }
+  </div>
+</nav>

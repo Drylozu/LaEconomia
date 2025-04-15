@@ -1,0 +1,66 @@
+---
+import productosEstrella from '../assets/productos-estrella.png';
+import antigripales from '../assets/antigripales.png';
+import dermocosmetica from '../assets/dermocosmetica.png';
+import snacks from '../assets/snacks.png';
+import mejoresOfertas from '../assets/mejores-ofertas.png';
+import salud from '../assets/salud.png';
+
+import { Image } from 'astro:assets';
+
+const categories = [
+  {
+    title: 'Productos Estrella',
+    image: productosEstrella,
+  },
+  {
+    title: 'Dermocosmetica',
+    image: dermocosmetica,
+  },
+  {
+    title: 'Antigripales',
+    image: antigripales,
+  },
+  {
+    title: 'Snacks',
+    image: snacks,
+  },
+  {
+    title: 'Mejores Ofertas',
+    image: mejoresOfertas,
+  },
+  {
+    title: 'Día de salud y bienestar',
+    image: salud,
+    disabled: true,
+  },
+];
+---
+
+<section class="w-full max-w-desktop mx-auto flex items-center justify-around mt-4">
+  {
+    categories.map((category) => (
+      <div
+        class="flex flex-col items-center gap-2 cursor-pointer"
+        class:list={[category.disabled && 'saturate-0']}
+      >
+        <div
+          class="size-[100px] border-4 rounded-full relative"
+          class:list={[
+            category.disabled ? 'border-gray-200' : 'border-[#9EC8F1]',
+          ]}
+        >
+          <Image
+            src={category.image}
+            alt={category.title}
+            class="scale-[1.35]"
+          />
+        </div>
+
+        <p class:list={[category.disabled && 'text-gray-300']}>
+          {category.title}
+        </p>
+      </div>
+    ))
+  }
+</section>

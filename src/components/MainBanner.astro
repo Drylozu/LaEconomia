@@ -1,0 +1,39 @@
+---
+import ArrowLeftIcon from '../components/icons/ArrowLeft.astro';
+import ArrowRightIcon from '../components/icons/ArrowRight.astro';
+import banner from '../assets/banner-main.jpg';
+
+import { Image } from 'astro:assets';
+---
+
+<main class="w-full relative">
+  <Image
+    src={banner}
+    alt="Día de La Economía"
+    width={1600}
+    height={420}
+    class="w-full h-auto object-cover"
+  />
+
+  <div class="absolute -translate-y-1/2 left-2 top-1/2">
+    <div class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer">
+      <ArrowLeftIcon />
+    </div>
+  </div>
+
+  <div class="absolute -translate-y-1/2 right-2 top-1/2">
+    <div class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer">
+      <ArrowRightIcon />
+    </div>
+  </div>
+
+  <div class="absolute -translate-x-1/2 bottom-2 left-1/2 cursor-pointer">
+    <div class="bg-black/0 rounded-full h-1 w-2"></div>
+    <div class="flex items-center gap-2">
+      <div class="bg-black/20 rounded-full size-1.5"></div>
+      <div class="bg-[#007AFF] rounded-full size-2"></div>
+      <div class="bg-black/20 rounded-full size-1.5"></div>
+      <div class="bg-black/20 rounded-full h-1 w-2"></div>
+    </div>
+  </div>
+</main>

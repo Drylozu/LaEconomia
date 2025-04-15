@@ -1,0 +1,75 @@
+---
+import SearchIcon from '../components/icons/Search.astro';
+import MapIcon from '../components/icons/Map.astro';
+import UserIcon from '../components/icons/User.astro';
+import TagIcon from '../components/icons/Tag.astro';
+import CartIcon from '../components/icons/Cart.astro';
+import ArrowDownIcon from '../components/icons/ArrowDown.astro';
+import logo from '../assets/logo.svg';
+
+import { Image } from 'astro:assets';
+import HamburgerMenuIcon from './icons/HamburgerMenu.astro';
+---
+
+<header
+  class="w-full bg-background md:py-4 py-5 px-6 flex flex-col gap-8 items-center"
+>
+  <div
+    class="flex w-full items-center max-w-desktop md:gap-12 max-md:justify-between"
+  >
+    <Image src={logo} alt="Logo" class="shadow-lg max-md:w-[150px]" />
+
+    <div
+      class="max-md:hidden rounded-lg flex py-3 px-4 bg-gray-100 justify-between flex-1"
+    >
+      <input
+        type="text"
+        class="placeholder:text-gray-400 flex-1"
+        placeholder="Buscar por productos, marcas y más..."
+      />
+
+      <SearchIcon />
+    </div>
+
+    <div class="flex items-center gap-4 text-gray-600">
+      <div class="user-link">
+        <MapIcon />
+        <p>Barranquilla</p>
+      </div>
+
+      <div class="user-link">
+        <UserIcon />
+        <p>Edgardo</p>
+        <ArrowDownIcon />
+      </div>
+
+      <div class="user-link">
+        <TagIcon />
+        <p>Cupones</p>
+      </div>
+
+      <div class="relative">
+        <CartIcon />
+        <div
+          class="absolute -right-2 -top-2 rounded-full size-5 flex items-center justify-center bg-error text-white"
+        >
+          <span class="text-xs">1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="md:hidden w-full flex items-center gap-4">
+    <HamburgerMenuIcon />
+
+    <div class="rounded-lg flex py-3 px-4 bg-gray-100 justify-between flex-1">
+      <input
+        type="text"
+        class="placeholder:text-gray-400 flex-1"
+        placeholder="Buscar por productos, marcas y más..."
+      />
+
+      <SearchIcon />
+    </div>
+  </div>
+</header>
