@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import VideoBanner from '../components/VideoBanner.astro';
+
+import SearchIcon from '../components/icons/Search.astro';
+import MapIcon from '../components/icons/Map.astro';
+import UserIcon from '../components/icons/User.astro';
+import ArrowDownIcon from '../components/icons/ArrowDown.astro';
+import TagIcon from '../components/icons/Tag.astro';
+import CartIcon from '../components/icons/Cart.astro';
+
+import { Image } from 'astro:assets';
+import logo from '../assets/logoeco.svg';
+---
+
+<Layout>
+  <VideoBanner />
+  <!-- Navbar -->
+  <div class="w-full bg-background py-4 flex justify-center">
+    <div class="flex w-full items-center max-w-desktop gap-12">
+      <!-- Logo -->
+      <Image src={logo} alt="Logo" class="shadow-lg" />
+
+      <!-- Search -->
+      <div class="rounded-lg flex py-3 px-4 bg-gray-100 justify-between flex-1">
+        <input
+          type="text"
+          class="placeholder:text-gray-400 flex-1"
+          placeholder="Buscar por productos, marcas y más..."
+        />
+
+        <SearchIcon />
+      </div>
+
+      <!-- Usuario -->
+      <div class="flex items-center gap-4 text-gray-600">
+        <div class="flex items-center gap-1">
+          <MapIcon />
+          <p>Barranquilla</p>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <UserIcon />
+          <p>Edgardo</p>
+          <ArrowDownIcon />
+        </div>
+
+        <div class="flex items-center gap-1">
+          <TagIcon />
+          <p>Cupones</p>
+        </div>
+
+        <div class="relative">
+          <CartIcon />
+          <div
+            class="absolute -right-2 -top-2 rounded-full size-5 flex items-center justify-center bg-error text-white"
+          >
+            <span class="text-xs">1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full bg-primary py-2 pl-12 text-sm">
+    <div class="w-full max-w-desktop flex items-center gap-8">
+      {
+        [
+          'Medicamentos',
+          'Botiquín',
+          'Salud y belleza',
+          'Cuidado del bebé',
+          'Alimentos y bebidas',
+          'Varios',
+        ].map((category) => (
+          <div class="flex items-center gap-2 text-white">
+            <p>{category}</p>
+            <ArrowDownIcon />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<!-- 50 Min Progress -->

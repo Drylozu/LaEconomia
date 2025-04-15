@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #1C58B7;
+    --color-background: #FCFCFC;
+    --color-error: #BB251A;
+}
+
+@layer utilities {
+    .max-w-desktop {
+        max-width: 1440px;
+    }
+}
+
+body {
+    background-color: #F2F4F7;
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+
+input {
+    outline: 0;
+    border: 0;
+}

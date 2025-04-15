@@ -1,0 +1,28 @@
+<video
+  class="w-full h-[40px] border-0 object-cover"
+  playsinline
+  controls={false}
+  muted
+  autoplay
+  loop
+>
+  <source src="video/banner mobile.mp4" media="(max-width: 480px)" />
+  <source src="video/banner web.mp4" />
+</video>
+
+<script>
+  const video = document.querySelector('video');
+  video?.play();
+
+//   document.addEventListener('', () => {
+//     console.log('s', video);
+//     if (!video) return;
+
+//     if (window.innerWidth < 480) {
+//       video.src = 'video/banner mobile.mp4';
+//     } else {
+//       video.src = 'video/banner web.mp4';
+//     }
+//     video.play();
+//   });
+</script>
