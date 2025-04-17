@@ -12,13 +12,13 @@ import { Image } from 'astro:assets';
 ---
 
 <footer
-  class="w-full bg-gray-50 py-10 px-6 lg:px-20 flex flex-col gap-12 text-gray-600"
+  class="w-full bg-gray-50 py-10 px-4 lg:px-20 flex flex-col items-center gap-12 text-gray-600 max-md:border-t border-gray-50"
 >
   <div
     class="w-full max-w-desktop flex max-xl:flex-col gap-y-10 justify-between"
   >
     <div
-      class="grid lg:grid-flow-col lg:grid-rows-1 gap-8 max-lg:grid-cols-2 max-lg:grid-rows-2 max-md:items-center"
+      class="grid lg:grid-flow-col lg:grid-rows-1 gap-8 max-lg:grid-cols-2 max-lg:grid-rows-2 max-xs:!grid-cols-none max-md:items-center"
     >
       <div class="w-44">
         <p class="text-xl font-bold mb-2">La empresa</p>
@@ -92,7 +92,7 @@ import { Image } from 'astro:assets';
   </div>
 
   <div
-    class="w-full flex max-lg:flex-col max-lg:text-center max-lg:items-center justify-between gap-y-6"
+    class="w-full max-w-desktop flex max-lg:flex-col max-lg:text-center max-lg:items-center justify-between gap-y-6"
   >
     <p class="lg:flex-[0.8]">
       &copy;2023 Droguería La Economía. Todos los derechos reservados. v5.0 -

@@ -1,0 +1,12 @@
+---
+const { banner, mobile } = Astro.props;
+---
+
+<section class="w-full flex justify-center px-4 lg:px-20 my-4 md:my-10">
+  <div class="w-full max-w-desktop flex items-center">
+    <picture>
+      <source media="(min-width: 728px)" srcset={banner.src} width={1280} />
+      <img src={mobile.src} width={1280} class="w-full h-auto rounded-lg" />
+    </picture>
+  </div>
+</section>

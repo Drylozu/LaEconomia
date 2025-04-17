@@ -7,17 +7,32 @@ import Navbar from '../components/Navbar.astro';
 import Menu from '../components/Menu.astro';
 import MainBanner from '../components/MainBanner.astro';
 import Categories from '../components/Categories.astro';
-import AdAntibiotics from '../components/AdAntibiotics.astro';
+import AdBanner from '../components/AdBanner.astro';
 import Footer from '../components/Footer.astro';
+import ProductSlider from '../components/ProductSlider.astro';
+import CategoriesCards from '../components/CategoriesCards.astro';
+
+import bannerAntibioticos from '../assets/banners/antibioticos.png';
+import mobileAntibioticos from '../assets/banners/mobile-antibioticos.png';
+import bannerVidaSana from '../assets/banners/vida-sana.png';
+import mobileVidaSana from '../assets/banners/mobile-vida-sana.png';
 ---
 
 <Layout>
   <VideoBanner />
   <Navbar />
   <Menu />
+
   <MainBanner />
   <Categories />
-  <AdAntibiotics />
+
+  <AdBanner banner={bannerAntibioticos} mobile={mobileAntibioticos} />
+
+  <ProductSlider title="Las mejores ofertas 🚨" />
+  <CategoriesCards />
+  <ProductSlider title="Lo más buscado 🤩" />
+
+  <AdBanner banner={bannerVidaSana} mobile={mobileVidaSana} />
 
   <Footer />
 </Layout>
