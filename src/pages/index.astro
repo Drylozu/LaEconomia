@@ -18,6 +18,12 @@ import mobileAntibioticos from '../assets/banners/mobile-antibioticos.png';
 import bannerVidaSana from '../assets/banners/vida-sana.png';
 import mobileVidaSana from '../assets/banners/mobile-vida-sana.png';
 
+import ArrowLeftIcon from '../components/icons/ArrowLeft.astro';
+import ArrowRightIcon from '../components/icons/ArrowRight.astro';
+
+import exclusivos from '../assets/banners/exclusivos.jpg';
+import mobileExclusivos from '../assets/banners/mobile-exclusivos.png';
+
 import genfar from '../assets/brands/genfar.png';
 import vick from '../assets/brands/vick.png';
 import floratil from '../assets/brands/floratil.png';
@@ -119,5 +125,33 @@ import engystol from '../assets/brands/engystol.png';
       },
     ]}
   />
+
+  <section class="max-w-desktop px-4 mx-auto w-full my-10 relative">
+    <div class="max-xl:hidden absolute -translate-y-1/2 left-0 top-1/2">
+      <div
+        class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer"
+      >
+        <ArrowLeftIcon />
+      </div>
+    </div>
+
+    <div class="max-xl:hidden absolute -translate-y-1/2 right-0 top-1/2">
+      <div
+        class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer"
+      >
+        <ArrowRightIcon />
+      </div>
+    </div>
+
+    <picture>
+      <source media="(min-width: 728px)" srcset={exclusivos.src} width={1280} />
+      <img
+        src={mobileExclusivos.src}
+        width={1280}
+        class="w-full h-auto rounded-lg"
+      />
+    </picture>
+  </section>
+
   <Footer />
 </Layout>
