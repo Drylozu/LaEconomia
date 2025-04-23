@@ -11,11 +11,27 @@ import AdBanner from '../components/AdBanner.astro';
 import Footer from '../components/Footer.astro';
 import ProductSlider from '../components/ProductSlider.astro';
 import CategoriesCards from '../components/CategoriesCards.astro';
+import BrandsSlider from '../components/BrandsSlider.astro';
 
 import bannerAntibioticos from '../assets/banners/antibioticos.png';
 import mobileAntibioticos from '../assets/banners/mobile-antibioticos.png';
 import bannerVidaSana from '../assets/banners/vida-sana.png';
 import mobileVidaSana from '../assets/banners/mobile-vida-sana.png';
+
+import genfar from '../assets/brands/genfar.png';
+import vick from '../assets/brands/vick.png';
+import floratil from '../assets/brands/floratil.png';
+import speedstick from '../assets/brands/speedstick.png';
+import ensure from '../assets/brands/ensure.png';
+import colgate from '../assets/brands/colgate.png';
+import strepsils from '../assets/brands/strepsils.png';
+
+import enterogermina from '../assets/brands/enterogermina.png';
+import colgateMarca from '../assets/brands/colgate-1.png';
+import neutrogena from '../assets/brands/neutrogena.png';
+import vickMarca from '../assets/brands/vick-1.png';
+import electrolit from '../assets/brands/electrolit.png';
+import engystol from '../assets/brands/engystol.png';
 ---
 
 <Layout>
@@ -32,7 +48,76 @@ import mobileVidaSana from '../assets/banners/mobile-vida-sana.png';
   <CategoriesCards />
   <ProductSlider title="Lo más buscado 🤩" />
 
+  <BrandsSlider
+    title="Inspirados en tu bienestar 🤗"
+    brands={[
+      {
+        image: genfar,
+        title: 'Genéricos',
+      },
+      {
+        image: vick,
+        title: 'Descongestionantes tópicos',
+      },
+      {
+        image: floratil,
+        title: 'Diarrea',
+      },
+      {
+        image: speedstick,
+        title: 'Desodorantes',
+      },
+      {
+        image: ensure,
+        title: 'Suplemento nutricional',
+      },
+      {
+        image: colgate,
+        title: 'Enjuagues',
+      },
+      {
+        image: strepsils,
+        title: 'Garganta',
+      },
+    ]}
+  />
+
   <AdBanner banner={bannerVidaSana} mobile={mobileVidaSana} />
 
+  <BrandsSlider
+    title="Marcas destacadas ⭐️"
+    brands={[
+      {
+        image: enterogermina,
+        horizontal: true,
+        padding: true,
+      },
+      {
+        image: genfar,
+      },
+      {
+        image: colgateMarca,
+        horizontal: true,
+      },
+      {
+        image: neutrogena,
+        horizontal: true,
+      },
+      {
+        image: vickMarca,
+        horizontal: true,
+      },
+      {
+        image: electrolit,
+        horizontal: true,
+        padding: true,
+      },
+      {
+        image: engystol,
+        horizontal: true,
+        padding: true,
+      },
+    ]}
+  />
   <Footer />
 </Layout>

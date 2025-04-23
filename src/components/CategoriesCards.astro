@@ -2,8 +2,82 @@
 import dolex from '../assets/products/dolex.png';
 import vick from '../assets/products/vick.png';
 import kidcal from '../assets/products/kidcal.png';
+import huggies from '../assets/products/huggies.png';
+import nestogeno from '../assets/products/nestogeno.png';
+import kendito from '../assets/products/kendito.png';
+import neutrogena from '../assets/products/neutrogena.png';
+import headshoulders from '../assets/products/headshoulders.png';
+import lubridem from '../assets/products/lubridem.png';
 
 import { Image } from 'astro:assets';
+
+const cards = [
+  {
+    title: 'Botiquín 💊',
+    description:
+      'La selección ideal de productos para tu cuidado en todo momento.',
+    products: [
+      {
+        image: dolex,
+        alt: 'Dolex',
+        description: 'Cabeza y general',
+      },
+      {
+        image: vick,
+        alt: 'Vick',
+        description: 'Tos',
+      },
+      {
+        image: kidcal,
+        alt: 'Kidcal',
+        description: 'Multivitamínicos',
+      },
+    ],
+  },
+  {
+    title: 'Cuidado del bebé 🍼',
+    description: 'Todo un mundo de productos para los consentidos de la casa.',
+    products: [
+      {
+        image: huggies,
+        alt: 'Huggies',
+        description: 'Pañales',
+      },
+      {
+        image: nestogeno,
+        alt: 'Nestogeno',
+        description: 'Leches infantiles',
+      },
+      {
+        image: kendito,
+        alt: 'Kendito',
+        description: 'Pañitos húmedos',
+      },
+    ],
+  },
+  {
+    title: 'Salud y belleza 💅🏼',
+    description:
+      'Encuentra aquí los marcas destacadas para cuidar de ti y tu familia.',
+    products: [
+      {
+        image: neutrogena,
+        alt: 'Neutrogena',
+        description: 'Tratamiento facial',
+      },
+      {
+        image: headshoulders,
+        alt: 'Head & Shoulders',
+        description: 'Shampoo y acondicionador',
+      },
+      {
+        image: lubridem,
+        alt: 'Lubriderm',
+        description: 'Tratamiento corporal',
+      },
+    ],
+  },
+];
 ---
 
 <section class="w-full flex justify-center px-4 lg:px-20 mb-5 pb-5">
@@ -11,58 +85,30 @@ import { Image } from 'astro:assets';
     class="w-full max-w-desktop grid xl:grid-cols-3 gap-5 grid-cols-1 grid-flow-row"
   >
     {
-      Array(3)
-        .fill(0)
-        .map(() => (
-          <div class="bg-white rounded-lg p-6 shadow-2xl shadow-black/5">
-            <h2 class="font-bold md:text-xl">Botiquín 💊</h2>
-            <p class="mt-2">
-              La selección ideal de productos para tu cuidado en todo momento.
-            </p>
+      cards.map((card) => (
+        <div class="bg-white rounded-lg p-6 shadow-2xl shadow-black/5">
+          <h2 class="font-bold md:text-xl">{card.title}</h2>
+          <p class="mt-2">{card.description}</p>
 
-            <div class="grid grid-cols-3 justify-between gap-10 mt-6">
+          <div class="grid grid-cols-3 justify-between gap-10 mt-6">
+            {card.products.map((product) => (
               <div class="flex flex-col items-center gap-2">
                 <div class="size-24 border border-gray-200 rounded-full flex items-center justify-center">
                   <Image
-                    src={dolex}
-                    alt="Dolex"
+                    src={product.image}
+                    alt={product.alt}
                     class="h-full w-auto object-cover"
                   />
                 </div>
 
                 <p class="text-xs text-center font-semibold">
-                  Cabeza y general
+                  {product.description}
                 </p>
               </div>
-
-              <div class="flex flex-col items-center gap-2">
-                <div class="size-24 border border-gray-200 rounded-full flex items-center justify-center">
-                  <Image
-                    src={vick}
-                    alt="Dolex"
-                    class="h-full w-auto object-cover"
-                  />
-                </div>
-
-                <p class="text-xs text-center font-semibold">Tos</p>
-              </div>
-
-              <div class="flex flex-col items-center gap-2">
-                <div class="size-24 border border-gray-200 rounded-full flex items-center justify-center">
-                  <Image
-                    src={kidcal}
-                    alt="Dolex"
-                    class="h-full w-auto object-cover"
-                  />
-                </div>
-
-                <p class="text-xs text-center font-semibold">
-                  Multivitamínicos
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-        ))
+        </div>
+      ))
     }
   </div>
 </section>

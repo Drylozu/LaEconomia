@@ -7,11 +7,16 @@
     --color-error: #BB251A;
 
     --breakpoint-xs: 320px;
+    --breakpoint-desktop-xl: 1920px;
 }
 
 @layer base {
     .max-w-desktop {
         max-width: 1440px;
+    }
+
+    .max-w-desktop-xl {
+        max-width: 1920px;
     }
 
     .user-link {

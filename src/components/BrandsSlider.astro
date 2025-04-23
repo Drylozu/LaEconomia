@@ -1,0 +1,61 @@
+---
+import ArrowLeftIcon from '../components/icons/ArrowLeft.astro';
+import ArrowRightIcon from '../components/icons/ArrowRight.astro';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const { title, brands = [] } = Astro.props;
+
+interface Brand {
+  image: ImageMetadata;
+  title?: string;
+  horizontal?: boolean;
+  padding?: boolean;
+}
+---
+
+<section class="w-full flex justify-center px-4 lg:px-20 mt-10 mb-5 pb-5">
+  <div class="w-full max-w-desktop flex flex-col gap-5">
+    <h2 class="font-bold md:text-2xl">{title}</h2>
+
+    <div
+      class="grid max-xl:grid-flow-col xl:grid-cols-7 overflow-auto gap-8 pb-4 relative px-4"
+    >
+      <div class="absolute -translate-y-1/2 left-0 top-1/2">
+        <div
+          class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer"
+        >
+          <ArrowLeftIcon />
+        </div>
+      </div>
+
+      <div class="absolute -translate-y-1/2 right-0 top-1/2">
+        <div
+          class="rounded-full bg-primary border-primary-dark p-2 cursor-pointer"
+        >
+          <ArrowRightIcon />
+        </div>
+      </div>
+
+      {
+        brands.map((brand: Brand) => (
+          <div class="flex flex-col items-center gap-2">
+            <div class="size-[150px] rounded-full bg-white flex items-center justify-center shadow-xl shadow-black/5">
+              <Image
+                src={brand.image}
+                alt={brand.title || 'Imagen de marca'}
+                class="object-cover"
+                class:list={[
+                  brand.horizontal ? 'w-full h-auto' : 'w-auto h-full',
+                  brand.padding && 'px-4',
+                ]}
+              />
+            </div>
+
+            <p class="text-sm text-center">{brand.title}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

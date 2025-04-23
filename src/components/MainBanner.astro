@@ -10,13 +10,13 @@ import mobileBanner3 from '../assets/banners/mobile-banner-3.png';
 import { Image } from 'astro:assets';
 ---
 
-<main class="max-md:hidden w-full relative">
+<main class="max-md:hidden w-full desktop-xl:max-w-[1440px] desktop-xl:my-5 mx-auto relative">
   <Image
     src={banner}
     alt="Día de La Economía"
     width={1600}
     height={420}
-    class="w-full h-auto object-cover"
+    class="w-full h-auto object-cover desktop-xl:rounded-xl"
   />
 
   <div class="absolute -translate-y-1/2 left-2 top-1/2">
