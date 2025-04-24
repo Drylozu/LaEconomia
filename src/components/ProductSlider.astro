@@ -1,6 +1,8 @@
 ---
 import product from '../assets/products/ponds.png';
 
+import CartIcon from './icons/Cart.astro';
+
 import { Image } from 'astro:assets';
 
 const { title } = Astro.props;
@@ -18,38 +20,237 @@ const { title } = Astro.props;
     <div
       class="grid max-xl:grid-flow-col xl:grid-cols-6 min-h-[300px] xl:min-h-[350px] 2xl:min-h-[400px] overflow-auto gap-8"
     >
-      {
-        Array(6)
-          .fill(0)
-          .map(() => (
-            <div class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-48 h-full">
-              <div class="w-full aspect-square h-auto flex items-center justify-center">
-                <Image
-                  src={product}
-                  alt="Crema Ponds"
-                  class="w-full h-auto object-cover"
-                />
+      <!-- 1 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+            <span class="text-xs text-gray-500">Gramo a $109</span>
+          </div>
+
+          <div class="w-full flex items-center">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+            <p class="text-md text-gray-400 line-through">$21.550</p>
+            <span class="text-xs text-gray-500">Gramo a $109</span>
+
+            <div class="flex items-center gap-2">
+              <div
+                class="bg-[#039855] text-white font-semibold text-sm rounded-lg flex items-center justify-center w-min px-2 py-1"
+              >
+                <p>20%</p>
               </div>
 
-              <div class="flex flex-col justify-between p-2 h-full">
-                <div>
-                  <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
-                    Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
-                  </h3>
-
-                  <p class="mt-2 font-bold text-xl">$10.250</p>
-                  <span class="text-xs text-gray-500">Gramo a $109</span>
-                </div>
-
-                <div class="w-full flex items-center">
-                  <button class="rounded-full w-full bg-primary text-white py-2 font-medium">
-                    Agregar
-                  </button>
-                </div>
+              <div
+                class="border-[#039855] text-[#039855] border-2 bg-[#EFFFF8] font-semibold text-sm rounded-lg flex items-center justify-center px-2 py-1"
+              >
+                <p>Exclusivo Web</p>
               </div>
             </div>
-          ))
-      }
+          </div>
+
+          <div class="w-full flex items-center mt-2">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+            <p class="font-bold text-xl text-[#039855]">$21.550 ⓘ</p>
+          </div>
+
+          <div class="w-full flex items-center">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+            <p class="text-md text-gray-400 line-through">$21.550</p>
+            <span class="text-xs text-gray-500">Gramo a $109</span>
+
+            <div
+              class="bg-[#039855] text-white font-semibold text-sm rounded-lg flex items-center justify-center w-min px-2 py-1"
+            >
+              <p>20%</p>
+            </div>
+          </div>
+
+          <div class="w-full flex items-center">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div
+        class="flex flex-col p-2 bg-white border border-gray-200 rounded-lg shadow-2xl shadow-black/5 max-xl:min-w-56 h-full"
+      >
+        <div
+          class="w-full aspect-square h-auto flex items-center justify-center"
+        >
+          <Image
+            src={product}
+            alt="Crema Ponds"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col justify-between p-2 h-full">
+          <div>
+            <h3 class="w-full text-ellipsis line-clamp-2 text-sm">
+              Crema Pond’s Clarant B3 Piel Normal A Grasa Porte x 100G
+            </h3>
+
+            <p class="mt-2 font-bold text-xl">$10.250</p>
+            <p class="text-md text-gray-400 line-through">$21.550</p>
+            <span class="text-xs text-gray-500">Gramo a $109</span>
+
+            <div
+              class="bg-[#039855] text-white font-semibold text-sm rounded-lg flex items-center justify-center w-min px-2 py-1"
+            >
+              <p>20%</p>
+            </div>
+          </div>
+
+          <div class="w-full flex items-center">
+            <button
+              class="rounded-full w-full bg-primary text-white py-2 font-medium flex items-center justify-center gap-2"
+            >
+              <CartIcon class="fill-white" /> Agregar
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
